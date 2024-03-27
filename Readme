@@ -1,11 +1,13 @@
+
+
 # Text-to-Audio Converter (T2S)
 
-T2S is a simple Python application that converts text input into audio files. It utilizes text-to-speech synthesis to generate audio from text.
+T2S is a straightforward Python application designed to convert text input into audio files. It employs text-to-speech synthesis to produce audio from text.
 
 ## Requirements
 - Python
 - gTTS (Google Text-to-Speech)
 
 ## Usage
-1. Run `python manage.py runserver` to generate the audio file.
-2. Find the output audio file in the `output` directory.
+1. Execute `python manage.py runserver` to create the audio file.
+2. Locate the resulting audio file in the `output` directory.
