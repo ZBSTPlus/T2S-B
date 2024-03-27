@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
             <ul class="nav-links">
                 <li> <a href="index.html"> <button >Home</button></a>
     </li>
-                <li><a href="text_to_audio.html"> <button >Convert</button></a></li>
+                <li><button type="submit" >Download</button></li>
             </ul>
         </div>
     </nav>
@@ -62,7 +63,7 @@
         <div class="col-12 col-sm-6 col-md-3 m-auto">
             <!-- card starts here -->
             <div class="card shadow">
-                <img src="/t2s/static/images/wish.jpg" alt="" class="card-img-top">
+                <img src="{% static 'images/wish.jpg' %}" alt="" class="card-img-top">
                 <div class="card-body">
                     <h3 class="text-center">Wish Your Loved One's</h3>
                     <hr class="mx-auto w-75">
