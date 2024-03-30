@@ -173,9 +173,9 @@ button {
         <div class="container">
             
             <ul class="nav-links">
-                <li> <a href="http://127.0.0.1:8000/"> <button >Home</button></a>
+                <li> <a href=" {% url 'home' %}"> <button >Home</button></a>
     </li>
-                <li><a href="/text-to-audio/"> <button >Convert</button></a></li>
+                <li><a href=" {% url 'text_to_audio' %}"> <button >Convert</button></a></li>
             </ul>
         </div>
     </nav>
@@ -195,7 +195,7 @@ button {
     <div class="slide">
         <h2>Let's Get Started</h2>
         <p>Start converting your text into speech now!</p>
-       <a href="/text-to-audio/"> <button onclick="nextSlide()">Let's get started </button></a>
+       <a href="{% url 'text_to_audio' %}"> <button onclick="nextSlide()">Let's get started </button></a>
        <div class="navigation-arrows">
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
@@ -276,36 +276,6 @@ button {
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
 
-<script>
-    let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.classList.add('active');
-        } else {
-            slide.classList.remove('active');
-        }
-    });
-}
-
-function nextSlide() {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-    showSlide(currentSlide);
-}
-
-function prevSlide() {
-    currentSlide--;
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-    showSlide(currentSlide);
-}
-
-</script>
+<script src="{% static 'script.js' %}"></script>
 </body>
 </html>

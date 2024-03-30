@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,9 +114,9 @@ button {
         <div class="container">
             
             <ul class="nav-links">
-                <li> <a href="text_to_audio.html"> <button >Home</button></a>
+                <li> <a href="{% url 'home' %}"> <button >Home</button></a>
     </li>
-                <li><a href="text_to_audio.html"> <button >Convert</button></a></li>
+                <li><a href="{% url 'text_to_audio' %}"> <button >Convert</button></a></li>
             </ul>
         </div>
     </nav>
@@ -126,6 +127,11 @@ button {
             {% csrf_token %}
             <textarea name="text" placeholder="Enter text to convert to audio"></textarea>
             <button type="submit">Convert to Audio</button>
+            {% if key == "ok" %}
+            <audio autoplay controls="controls">  
+                <source src="{% static 'output.mp3' %}" />  
+            </audio>
+            {% endif %}
         </form>
     </div>
 
@@ -134,6 +140,6 @@ button {
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
 
-<script src="script.js"></script>
+<script src="{% static 'script.js' %}"></script>
 </body>
 </html>

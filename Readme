@@ -10,3 +10,4 @@ T2S is a straightforward Python application designed to convert text input into 
 1. Run `python manage.py runserver` to initiate the conversion process and generate the audio file.
 2. Locate the output audio file in the `output` directory for further use or distribution.
 
+python manage.py collectstatic is needed for initial set up

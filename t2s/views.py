@@ -1,5 +1,6 @@
 import os
 from django.shortcuts import render
+from pathlib import Path
 from gtts import gTTS
 from django.http import HttpResponse
 def home(request):
@@ -15,8 +16,9 @@ def text_to_audio(request):
                 language = "hi"  # Hindi
             
             tts = gTTS(text=text.strip(), lang=language)
-            tts.save("output.mp3")
-            os.system("start output.mp3")
+            tts.save(Path(__file__).parent / "static/output.mp3")
+        return render(request, 'text_to_audio.html',{"key":"ok",})
+            # os.system("start output.mp3")
     return render(request, 'text_to_audio.html')
 
 
