@@ -22,5 +22,7 @@ def text_to_audio(request):
     return render(request, 'text_to_audio.html')
 
 
+def about_us_view(request):
+    return render(request, 'about_us.html')
 
 # Create your views here.
